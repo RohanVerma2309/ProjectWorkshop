@@ -4,7 +4,7 @@
 
 # Product requirements doc
 
-## **\*\***✏️\***\* Intro & Goals**
+## **✏️ Intro & Goals**
 
 We'll be building on the following:Then add some concrete goals:
 
