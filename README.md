@@ -20,8 +20,10 @@ As there are many exciting features to implement in this project, we would like 
     -   Major Focus here is on handling large amount of data for a single user.
     -   For this we'll be exploring Apache as well as MongoDB.
     -   Giving the user flexibility to create their own tags and grouping their photos will be an exciting challenge.
+    -   Showcase a view with dates, locations.
     -   Add on to this will be making it work for multiple users.
-    -   Showcase a view with dates, locations, and with future features adding facial recognition as well.
+    
 -   **Additional Feature:** These are some features that we would love to explore:
     -   Image editing Algorithm to playaround with the image. Firstly, we'll be working on basic features like rotate, crop, etc.
+    -   Facial recognition
     -   We can make the thumbnail customizable.
