@@ -1,5 +1,6 @@
 # ProjectWorkshop - Team Galleria
-
+### - Pranav, Ravanpreet, Saroj, Rohan, Pranay
+### - 01/11/2022
 ---
 
 # Product requirements doc
