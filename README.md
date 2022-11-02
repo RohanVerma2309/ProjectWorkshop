@@ -1,17 +1,19 @@
 # ProjectWorkshop - Team Galleria
-### - Pranav, Ravanpreet, Saroj, Rohan, Pranay
-### - 01/11/2022
+#### - Pranav, Ravanpreet, Saroj, Rohan, Pranay
+#### - 01/11/2022
 ---
+Shan
 
 # Product requirements doc
 
-## ** ✏️ Intro & Goals **
+##  ✏️ Intro & Goals 
 
 Our major focus will be on giving back power to the user, i.e., focusing majorly on user flexibility.
 We'll be building on the following:Then add some concrete goals:
 
 -   [ ] Creating a way to search and sort through files for images of different formatting
 -   [ ] Create a layout for image display
+
 ## Features:
 
 As there are many exciting features to implement in this project, we would like to go step by step:
