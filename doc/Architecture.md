@@ -1,9 +1,3 @@
-
-title: System Architecture
-created at: Tue Nov 01 2022 04:36:15 GMT+0000 (Coordinated Universal Time)
-updated at: Mon Nov 07 2022 03:34:33 GMT+0000 (Coordinated Universal Time)
----
-
 # System Architecture
 
 -   Saroj - Ravanpreet - Pranav - Pranay - Rohan
@@ -95,10 +89,8 @@ updated at: Mon Nov 07 2022 03:34:33 GMT+0000 (Coordinated Universal Time)
 ### Sort
 
 -   Sorting is done on the explore tab, where the photographer's name will be displayed in a dropdown box and photos are displayed according to the selection.
-
-![image.png](media_System%20Architecture/image.png)
-
-![WhatsApp Image 2022-11-03 at 10.46.23 AM.jpeg](media_System%20Architecture/WhatsApp%20Image%202022-11-03%20at%2010.46.23%20AM.jpeg)
+![image](https://user-images.githubusercontent.com/73405757/200231195-d77e4adb-1ddb-4a44-8951-1fe0e2b2a0eb.png)
+![WhatsApp Image 2022-11-03 at 10 46 23 AM](https://user-images.githubusercontent.com/73405757/200231205-e4bd9386-5e08-4f48-80e7-1471f0edc5ae.jpeg)
 
 * * *
 
