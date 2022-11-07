@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: #EAEAEA;
+    width: 100%;
+    height: 70px;
+}
+
+.navbar ul li img{
+    height: 25%;
+}
+
+.navbar ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display:flex;
+    position: relative;
+}
+
+.navbar #explore{
+    font-size: 20px;
+    margin-left: 70px;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    border-width: 0px;
+    margin-top: 15px;
+}
+
+.navbar #explore:hover{
+    cursor: pointer;
+    border-color: #493F5b;
+    border-width: 2px;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.navbar #myspace{
+    font-size: 20px;
+    margin-left: 70px;
+    padding: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    border-width: 0px;
+    margin-top: 15px;
+}
+
+.navbar #myspace:hover{
+    cursor: pointer;
+    border-color: #493F5b;
+    border-width: 2px;
+    padding: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.navbar #login{
+    margin-left: 520px;
+    background-color: white;
+    font-size: 20px;
+    padding: 5px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 10px;
+    border-width: 0px;
+    margin-top: 15px;
+    border-width: 2px;
+}
+
+.navbar #login:hover{
+    cursor: pointer;
+}
+
+
