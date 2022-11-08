@@ -5,20 +5,96 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Galleria</title>
         <link href="style.css" rel="stylesheet" type="text/css" />
-        <script src="scripts/script.js"></script>
     </head>
     <body>
         <div class="navbar">
             <ul>
                 <li><img src= "assets\logo.png"></li>
                 <li><button id="explore">Explore</button></li>
-                <li><button id="myspace">My Space</button></li>
+                <li><a href="login.html"><button id="myspace">My Space</button></a></li>
                 <li><a href="login.html"><button id="login">Login</button></a></li>
             </ul>
         </div>
-        
-        <div>
-            
+
+        <div class="segmented-control">
+            <input type="radio" name="radio2" value="3" id="tab-1" checked/>
+            <label for="tab-1" class= "segmented-control__1">
+              <p>Latest</p></label>
+            <input type="radio" name="radio2" value="4" id="tab-2" />
+            <label for="tab-2" class= "segmented-control__2">
+              <p>Popular</p></label>
+            <div class="segmented-control__color"></div>
         </div>
+
+        <div class="divisor">
+        </div>
+
+        <div class="gallery">
+
+          <div class="images">
+            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
+          </div>
+
+          <div class="photographer">
+            <div class="photographer_name">
+              <p class="name"><a href="#">Rohan Verma</a></p>
+            </div>
+            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
+
+            <div class="display_img" id="preview_win">
+              <img src="assets/test.jpg" id="preview_img">
+              <span id="close" onclick="close_preview_image()">< BACK</span>
+              <span id="zoom-in" onclick="zoom_in()">+</span>            
+              <span id="zoom-out" onclick="zoom_out()">-</span>            
+
+            </div>
+          </div>
+        </div>
+
+        <script>
+          var previewImgWin= document.getElementById("preview_win");
+          var previewImg= document.getElementById("preview_img");
+
+          function open_preview_image(pic)
+          {
+              previewImgWin.style.display= "flex";
+              preview_img.src= pic;
+          }
+
+          function close_preview_image()
+          {
+              previewImgWin.style.display= "none";
+              var previewImg= document.getElementById("preview_img");
+              previewImg.style.width= "800px";
+          }
+
+          function zoom_in()
+          {
+            var previewImg= document.getElementById("preview_img");
+            var curr_width= previewImg.clientWidth;
+            previewImg.style.width= (curr_width+100)+"px";
+          }
+
+          function zoom_out()
+          {
+            var previewImg= document.getElementById("preview_img");
+            var curr_width= previewImg.clientWidth;
+            previewImg.style.width= (curr_width-100)+"px";
+          }
+        </script>
     </body>
 </html>
