@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'crispy_forms', #this is the package of Django which we have to install using pip command - 'pip install django_crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#This helps to add the static files in the dir
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static')
+                ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
