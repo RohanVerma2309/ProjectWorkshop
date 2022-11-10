@@ -1,18 +1,28 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Galleria</title>
-        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="{% static 'users/css/style.css' %}" rel="stylesheet" type="text/css" />
     </head>
     <body>
+      {% load static %}
         <div class="navbar">
             <ul>
-                <li><img src= "assets\logo1.png"></li>
+                <li><img src= "{% static 'users/assets/logo1.png' %}"></li>
                 <li><button id="explore">Explore</button></li>
-                <li><a href="login.html"><button id="myspace">My Space</button></a></li>
-                <li><a href="login.html"><button id="login">Login</button></a></li>
+
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'profile' %}"><button id="myspace">My Space</button></a></li>
+                <li><a href="{% url 'upload' %}"><button id="login">Upload</button></a></li>
+                <li><a href="{% url 'logout' %}"><button id="login">Log out</button></a></li>
+
+                {% else %}
+                <li><a href="{% url 'register' %}"><button id="login">Log In</button></a></li>
+                <li><a href="{% url 'login' %}"><button id="login">Register</button></a></li>
+                {% endif %}
             </ul>
         </div>
 
@@ -32,39 +42,55 @@
         <div class="gallery">
 
           <div class="images">
+            {% for i in images %}
+            <img id="gal_img" src="/media.{{i.image}}" onclick="open_preview_image(this.src)" alt="Default">
+            <!-- <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
             <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
             <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
             <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
             <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
             <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
-            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
-            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
-            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)">
+            <img id="gal_img" src="assets/test.jpg" onclick="open_preview_image(this.src)"> -->
+              {% endfor %}
           </div>
 
           <div class="photographer">
+            {% for i in images %}
             <div class="photographer_name">
-              <p class="name"><a href="#">Rohan Verma</a></p>
+              <p class="name"><a href="#"></a></p>
             </div>
+            <img id="gal_img" src="/media.{{i.image}}" onclick="open_preview_image(this.src)">
+            <!-- <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
             <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
             <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
             <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
             <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
             <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
-            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
-            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
-            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)">
-
+            <img id="gal_img" src="assets/test2.jpg" onclick="open_preview_image(this.src)"> -->
+            
             <div class="display_img" id="preview_win">
-              <img src="assets/test.jpg" id="preview_img">
+
+              <img src="/media.{{i.image}}" id="preview_img">
               <span id="close" onclick="close_preview_image()">< BACK</span>
               <span id="zoom-in" onclick="zoom_in()">+</span>            
-              <span id="zoom-out" onclick="zoom_out()">-</span>            
+              <span id="zoom-out" onclick="zoom_out()">-</span>  
+              <span id="file_name">{% images.caption %}</span>          
 
             </div>
+            {% endfor %}
           </div>
         </div>
-
+        <div>
+          <div class="container">
+            {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{message.tags}}">{{message}}</div>
+            {% endfor %}
+          {% endif %}
+          </div>
+          {% block content %}
+          {% endblock content %}
+        </div>
         <script>
           var previewImgWin= document.getElementById("preview_win");
           var previewImg= document.getElementById("preview_img");
