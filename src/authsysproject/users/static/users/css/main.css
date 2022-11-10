@@ -13,7 +13,7 @@
   border-radius: 50%;
 }
 #header-text{
-  color: white;
+  color: rgb(20, 4, 4);
   font-family: 'Open Sans', sans-serif;
   font-size: 50px;
   margin-top: 100px;
@@ -285,7 +285,7 @@ background-color: rgba(0,0,0,.76);
 .container__child {
 width: 50%;
 height: 100%;
-color: #fff;
+color: rgb(0, 0, 0);
 }
 .signup__thumbnail {
 position: relative;
@@ -316,7 +316,7 @@ vertical-align: bottom;
 h1,
 h2 {
 font-weight: 300;
-color: rgba(255,255,255,1);
+color: rgb(0, 0, 0);
 }
 .heading--primary {font-size: 1.999rem;}
 .heading--secondary {font-size: 1.414rem;}
