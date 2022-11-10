@@ -293,3 +293,11 @@ body{
   cursor: pointer;
   font-weight: bold;
 }
+
+.display_img #file_name{
+  position: absolute;
+  bottom: 2.5%;
+  right: 45%;
+  font-size: 15px;
+  color: white;
+}
