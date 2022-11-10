@@ -40,6 +40,9 @@ def register(request):
 
     return render(request, 'users/register.html', {'form': form})
 
+def home(request):
+    img = Image.objects.all()
+    return render(request, 'users/home.html', {'img':img})
 
 @login_required()
 def profile(request):
