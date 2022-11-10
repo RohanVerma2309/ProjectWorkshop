@@ -6,11 +6,11 @@
 # How to run:
 - Open src -> authsysproject
 - In the  terminal run:
-'''
+```
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
-'''
+```
 
 
 
