@@ -6,15 +6,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import ImageForm
 from .models import Image, ImageShow
 from django.views.generic import DetailView
-# from Image.models import Image
-
-# def home(request):
-
-# def ImageDisplay(DetailView):
-#     model = Image
-#     # template_name = 'users/home.html'
-#     context_object_name = 'emp'
-#     return render(request, 'users/home.html')
 
 def showImage(request):
     image = Image.objects.all()

@@ -49,6 +49,10 @@
         cursor: pointer;
         font-weight: bold;
       }
+
+      #gal_img{
+        object-fit: cover;
+      }
       
 </style>
 {% comment %} <link rel="stylesheet" href="{% static 'css/main.css' %}"> {% endcomment %}
@@ -102,7 +106,7 @@
     function open_preview_image(pic)
     {
         previewImgWin.style.display= "flex";
-        preview_img.src= pic;
+        previewImg.src= pic;
     }
 
     function close_preview_image()
