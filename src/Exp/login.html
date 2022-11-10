@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Galleria</title>
-        <link href="logincss.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
+{% extends 'users/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block content %
+<link href="logincss.css" rel="stylesheet" type="text/css" />
+
         <h1>GALLERIA</h1>
         <div class="float_box">
             <h2>Login</h2>
             
-            <form id= "form">
+            <form id= "form" action="" method ="POST">
+                {% csrf_token %}
                 <label for="username"><p>Username</p></label>
                 <input type="text" id="username" name="username" placeholder="Enter Username" required>
-                <label for="password"><p>Password</p></label>
-                <input type="password" id="password" name="password" placeholder="Enter Password" required>
-                <input type="submit" name="" value="Login"><br>
-                <a href= "forgot_pass.html">Forgot Password ?</a><br>
-                <a href= "registration_form.html">Don't have an account?</a>
+                <label for="pass1"><p>Password</p></label>
+                <input type="password" id="password" name="pass1" placeholder="Enter Password" required>
+                <input type="submit" name="" value="Log In"><br>
+               {% comment %} <a href= "forgot_pass.html">Forgot Password ?</a> {% endcomment %}
+                <a href= "{% url 'register' %}">Don't have an account?</a>
             </form>
 
         </div>
-    </body>
-</html>
+ {% endblock %}
