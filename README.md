@@ -2,7 +2,17 @@
 #### - Pranav, Ravanpreet, Saroj, Rohan, Pranay
 #### - 01/11/2022
 ---
-Shan
+
+# How to run:
+- Open src -> authsysproject
+- In the  terminal run:
+```
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+
+
 
 # Product requirements doc
 
