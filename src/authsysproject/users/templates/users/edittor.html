@@ -1,0 +1,154 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+    .display_img{
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 100; /*scrolling feature on zoomed images will be implemented later.*/
+      }
+      
+      .display_img img{
+        width: 80%;
+        width: 800px;
+      }
+      
+      .display_img #close{
+        position: absolute;
+        top: 4%;
+        left: 5%;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      
+      .display_img #zoom-in{
+        position: absolute;
+        top: 3%;
+        right: 45%;
+        font-size: 50px;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      
+      .display_img #zoom-out{
+        position: absolute;
+        top: 2.5%;
+        right: 52%;
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      #gal_img{
+        object-fit: cover;
+      }
+      
+</style>
+{% comment %} <link rel="stylesheet" href="{% static 'css/main.css' %}"> {% endcomment %}
+
+<link href="{% static 'users/css/style.css' %}" rel="stylesheet" type="text/css" />
+<div class="container">
+<div class="row">
+    {% for x in img %}
+    <div class="col-sm-4">
+        <div class="images">
+            <img id="gal_img" src="{{x.photo.url}}" alt="" onclick="open_preview_image(this.src)">
+
+            <div class="card-footer">
+                <small class="text-muted">{{x.date}}</small>
+            </div>
+        </div>
+    </div>
+    <div class="display_img" id="preview_win">
+        <img src="{{x.photo.url}}" id="preview_img">
+        <span id="close" onclick="close_preview_image()">< BACK</span>
+        <span id="zoom-in"><button style="margin-top: 5%; padding: 0px 17px;font-weight: 600; background-color: white; border-radius: 50%;" onclick="zoom_in()">+</button></span>            
+        <span id="zoom-out"><button onclick="zoom_out()" style="font-size: 42px; padding: 0px 22px; font-weight: 600; background-color: white; border-radius: 50%;" onclick="zoom_in()">-</button></span>
+        <span id="edit" onclick= "edit_controls()"><button style="font-size: 15px; color: black; font-weight: 600; letter-spacing: 2px; padding: 5px 20px; position: absolute;
+          bottom: 2.5%;
+          right: 48%;
+          cursor: pointer;">EDIT</button></span>
+      </div>
+    {% endfor %}
+</div>
+</div>
+
+
+{% comment %} <div class="row g-0">
+  <div class="col-sm-6 col-md-8" id="header-text">
+    <h1 id="header-h1">Multi-regulated <br> global broker. </h1>
+    <p id="header-paragraph">A trusted destination for traders worldwide, <br> Authorised by FCA, ASIC & FSCA</p>
+    <a class="btn" style="color: white; background-color: #fd5e14;" type="submit" id="body-link-row">Discover More</a>
+  </div>
+  
+  <div class="col-6 col-md-4" id="header-image"><img src="images/in-liquid-slide-2.svg " alt=""></div>
+</div> {% endcomment %}
+<script>
+  var img= document.getElementById("preview_img");
+
+  var previewImgWin= document.getElementById("preview_win");
+  var previewImg= document.getElementById("preview_img");
+
+    function open_preview_image(pic)
+    {
+        previewImgWin.style.display= "flex";
+        previewImg.src= pic;
+    }
+
+    function close_preview_image()
+    {
+        previewImgWin.style.display= "none";
+        var previewImg= document.getElementById("preview_img");
+        previewImg.style.width= "800px";
+    }
+
+    function zoom_in()
+    {
+      var previewImg= document.getElementById("preview_img");
+      var curr_width= previewImg.clientWidth;
+      var edit_btn= document.getElementById("edit");
+      previewImg.style.width= (curr_width+100)+"px";
+      previewImg.style.transition= "ease-in-out .3s";
+      if(curr_width>1000)
+      {
+        edit_btn.style.display= "none";
+      }
+
+      else
+      {
+        edit_btn.style.display= "flex";
+      }
+
+    }
+
+    function zoom_out()
+    {
+      var previewImg= document.getElementById("preview_img");
+      previewImg.style.transition= "ease-in-out .3s";
+      var curr_width= previewImg.clientWidth;
+      previewImg.style.width= (curr_width-100)+"px";
+      var edit_btn= document.getElementById("edit");
+      if(curr_width<=1000)
+      {
+        edit_btn.style.display= "flex";
+      }
+    }
+</script>
+{% endblock content %}
