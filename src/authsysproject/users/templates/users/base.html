@@ -25,7 +25,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              <a class="nav-link active"  aria-current="page" href="{% url 'home' %}">Home</a>
               {% comment %} <a class="nav-link" href="#">Market</a>
               <a class="nav-link" href="#">Company</a>
               <a class="nav-link" href="#">Education</a>
@@ -34,9 +34,11 @@
             </div>
             <form class="d-flex" id="authstyle">
               {% if user.is_authenticated %}
-                <a href="{% url 'profile' %}" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Profile </a>
+              <div style="padding : 24px ">
+                <a href="{% url 'profile' %}" class="btn " style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Profile {{user.username}} </a>
                 <a href="{% url 'upload' %}" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Upload </a>
                 <a href="{% url 'logout' %}" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Logout </a>
+              </div>
               {% else %}
                 <a href="{% url 'register' %}" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Create Account </a>
                 <a href="{% url 'login' %}" class="btn" style="color: white; background-color: #fd5e14; margin-left: 10px; "type="submit" id="header-links">Log In</a>
