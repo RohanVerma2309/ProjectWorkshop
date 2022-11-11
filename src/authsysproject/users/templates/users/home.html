@@ -66,6 +66,7 @@
 <link href="{% static 'users/css/style.css' %}" rel="stylesheet" type="text/css" />
 <div class="container">
 <div class="row">
+  {% if user.is_authenticated %}
     {% for x in img %}
     <div class="col-sm-4">
         <div class="images">
@@ -87,6 +88,20 @@
           cursor: pointer;">EDIT</button></span>
       </div>
     {% endfor %}
+    {% else %}
+    {% for x in img %}
+    <div class="col-sm-4">
+        <div class="images">
+            <img id="gal_img" src="{{x.photo.url}}" alt="" onclick="open_preview_image(this.src)">
+
+            <div class="card-footer">
+                <small class="text-muted">{{x.date}}</small>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% endif %}
 </div>
 </div>
 
