@@ -35,6 +35,10 @@ def home(request):
     img = Image.objects.all()
     return render(request, 'users/home.html', {'img':img})
 
+def edit(request):
+    # img = Image.objects.all()
+    return render(request, 'users/editor.html')
+
 @login_required()
 def profile(request):
     return render(request, 'users/profile.html')

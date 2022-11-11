@@ -9,11 +9,11 @@
     <form action="" method="POST">
       {% csrf_token %}
       <fieldset class="form-group">
-          <legend class="border-bottom mb-4" style="color: white;">Sign In Now</legend>
+          <legend class="border-bottom mb-4" style="font-size: 40px; color: black;">Sign In Now</legend>
           {{ form|crispy }}
       </fieldset>
-      <div class="form-group" id="signup-button">
-          <button class="btn ">Sign In</button>
+      <div class="form-group" style="background-color: #7D14B2; color: white;" id="signup-button">
+          <button class="btn " style="color: white;">Sign In</button>
       </div>
       <div class="form-group">
           <small class="text-muted ml-3" >Don't have an account yet? <a href="{% url 'register' %}">Sign Up Today</a></small>
